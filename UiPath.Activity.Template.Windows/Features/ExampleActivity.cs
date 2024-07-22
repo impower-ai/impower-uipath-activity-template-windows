@@ -17,12 +17,21 @@ public class ExampleActivity : CodeActivity
 	// In Argument meaning its a value we are taking in. Of type string. 
 	public InArgument<string> InputExampleArgument { get; set; }
 
+	// Example Output Argument
+	[DisplayName("String Output Argument")]
+	[Description("This is an example string argument. This is shown as a tooltip and can be viewed in UiPath Studio.")]
+	[RequiredArgument]
+	public OutArgument<string> OutputArgument { get; set; }
+
 	protected override void Execute(CodeActivityContext context)
 	{
 		// When you want to retrieve the value that the consumer has specified for the activity.
 		// You must call .Get on the property that has the argument, and give it a context.
 		// For example. InputExampleArgument.Get(context); 
 		// This will access the value provided in UiPath Studio ^
-		Console.WriteLine($"Custom Activity Output: {InputExampleArgument.Get(context)}");
+		var inputValue = InputExampleArgument.Get(context);
+		Console.WriteLine($"Custom Activity Output: {inputValue}");
+		// Set output argument to string appended with itself. 
+		OutputArgument.Set(context, $"{inputValue} - {inputValue}");
 	}
 }
