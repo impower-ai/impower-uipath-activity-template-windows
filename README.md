@@ -13,8 +13,6 @@
 1. [UiPath Documentation](https://docs.uipath.com/sdk/other/latest/developer-guide/creating-activities-with-code)
 
 ## Steps to Package project and Import into UiPath Studio
-Reminder: Each time you package the project, make sure you open the .csproj for the project in the solution. Then change the "version", going upwards. i.e "<Version>1.0.0</Version>" could become "<Version>1.0.1</Version>".
-This version will be how you identify the latest version of your package in UiPath Studio. 
 1. Create local folder: C:\LocalNuget 
 2. In Visual Studio, right click the "UiPath.Activity.Template.Windows" project in the solution.
 3. Click "Pack" 
@@ -25,3 +23,5 @@ This version will be how you identify the latest version of your package in UiPa
 8. Open UiPath Project
 9. Click Manage Packages, select "Local Nuget" source. Click install on the package shown 
 
+Reminder: Each time you package the project, make sure you open the .csproj for the project in the solution. Then change the "version", going upwards. i.e "<Version>1.0.0</Version>" could become "<Version>1.0.1</Version>".
+This version will be how you identify the latest version of your package in UiPath Studio. 
